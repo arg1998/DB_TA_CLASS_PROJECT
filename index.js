@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const server = require("express")();
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const { registerUser, addFriend, getUser } = require("./routes/User.route");
+const usersRoutes = require("./routes/User.route");
 
 // connect to data base
 const db_uri = `mongodb://${config.db_username}:${config.db_pass}@${
@@ -21,10 +21,16 @@ server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
 server.use(cors());
 
-//set up server's routes
-server.post("/register", registerUser);
-server.post("/add_friend", addFriend);
-server.get("/user/:user_id", getUser);
+// set up server's routes
+server.post("/register", usersRoutes.registerUser);
+server.post("/add_friend", usersRoutes.addFriend);
+server.get("/user", usersRoutes.getAllUsers);
+server.get("/user/:user_id", usersRoutes.getUser);
+
+
+
+
+
 
 // start the server
 server.listen(config.server_port, () => {

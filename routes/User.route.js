@@ -53,8 +53,18 @@ const getUser = async (req, res) => {
   }
 };
 
+const getAllUsers = async (req, res) => {
+  const users = await UserModel.find();
+  if (users) {
+    res.send(users);
+  } else {
+    res.send({ error: "cant fetch users from database" });
+  }
+};
+
 module.exports = {
   registerUser,
   getUser,
-  addFriend
+  addFriend,
+  getAllUsers
 };
