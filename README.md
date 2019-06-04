@@ -56,8 +56,8 @@ also you can **clone** this repo and run it on your own.
       - **m** : month of the year
       - **d**: day of the month 
 
-  example :
-  **url** : `https://SERVER_URL/user/5cf2928d207f4965efebbd66`
+  example :<br />
+  **url** : `https://SERVER_URL/user/5cf2928d207f4965efebbd66`<br />
   **POST body**: 
   ```json
   {
@@ -81,8 +81,8 @@ also you can **clone** this repo and run it on your own.
     - **user_id**: id of the user
     - **friend_id** : ID of the  second user which is going to be friend with first user
 
-  example :
-  **url** : `https://SERVER_URL/add_friend`
+  example :<br />
+  **url** : `https://SERVER_URL/add_friend`<br />
   **POST body**: 
   ```json
   {
